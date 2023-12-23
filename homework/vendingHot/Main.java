@@ -23,11 +23,10 @@ public class Main {
         VendingHotDrinks vendingHot = new VendingHotDrinks();
         vendingHot.initProduct(hotDrinks);
         // System.out.println("Your choice:");
-        // System.out.println(vendingHot.getProduct("tea", 0.250, 60));
-        // System.out.println(vendingHot.getProduct(70));
+        // System.out.println(vendingHot.getProduct("tea", 0.250, 60)); // само задание
+        // System.out.println(vendingHot.getProduct(70));  // запрос по температуре
 
-
-
+        // Выдача товара по ID
         Map<String, Object> fltrBuffer = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
         boolean search = true;
@@ -64,7 +63,5 @@ public class Main {
             if (matchesFilter) System.out.println("\u001B[32m"+"Ваш выбор: " + hotDrink+ "\u001B[0m");
         }
     }
-
-
 }
 
