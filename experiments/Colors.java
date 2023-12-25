@@ -1,6 +1,6 @@
 package experiments;
 
-public class Colours {
+public class Colors {
     static String green = "\u001B[32m";
     static String yellow = "\u001B[33m";
     static String blue = "\u001B[34m";
