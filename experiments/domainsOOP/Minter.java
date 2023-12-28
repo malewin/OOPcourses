@@ -12,6 +12,7 @@ public class Minter implements Mint, SendMsg {
             mintedCollection.add(nft);
             minters.add(wallet.getWalletAddress());
             wallet.setBalance(wallet.getBalance() - nft.getPriceMint());
+            System.out.println("\u001B[35m" + "NFT" + nft + " создана за "+ nft.getPriceMint() + "\u001B[0m");
         }
     }
 
@@ -20,6 +21,7 @@ public class Minter implements Mint, SendMsg {
     public void sentMessage(Wallet wallet) {
         if (mintedCollection.size() != 0 && mintedCollection.peek().getAddrMinter().equals(wallet.getWalletAddress())){
             wallet.wallet.add(mintedCollection.poll());
+            System.out.println("\u001B[35m" + "NFT" + " отправлена кошельку " + wallet.getWalletAddress() + "\u001B[0m");
         }
     }
 }

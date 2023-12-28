@@ -1,8 +1,10 @@
 package experiments.domainsOOP;
 
+import java.util.List;
+
 public abstract class NFT {
     public int id;
-    public String name;
+    static public String name;
     public int amount;
     public String type;
     public String description = null;
@@ -77,5 +79,15 @@ public abstract class NFT {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public static void showList(List<NFT> nftList){
+        String [] collection = new String[nftList.size()];
+        for (int i = 0; i < collection.length; i++) {
+            for (NFT domain : nftList) {
+                collection[i] = domain.getName();
+            }
+        }
+        System.out.println("\u001B[33m" + collection + "\u001B[0m");
     }
 }

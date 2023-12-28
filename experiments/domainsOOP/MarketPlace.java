@@ -62,6 +62,7 @@ public class MarketPlace implements Trading{
             wallet.setBalance(wallet.balance + price);
             storer.add(nft);
             balance = balance - price;
+            System.out.println("\u001B[35m" + "Магазин " + name + " купил 1 НФТ " + nft.getName() +" у кошелька " + wallet.getWalletAddress() + " за " + price + "\u001B[0m");
         }
 
     }

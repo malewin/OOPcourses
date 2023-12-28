@@ -22,6 +22,7 @@ public class Main {
         wallet2.sentMessage(domain3, wallet1);
         wallet1.showWallet();
         wallet2.showWallet();
+        marketPlace1.tooString();
         System.out.println(marketPlace1.getBalance());
         marketPlace1.buy(domain1, wallet1, 800);
         System.out.println(marketPlace1.getBalance());

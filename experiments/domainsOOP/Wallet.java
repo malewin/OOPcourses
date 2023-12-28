@@ -1,7 +1,9 @@
 package experiments.domainsOOP;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 public class Wallet implements SendMsg{
     public List<NFT> wallet = new ArrayList<>();
@@ -38,8 +40,8 @@ public class Wallet implements SendMsg{
     }
 
     public void showWallet(){
-        System.out.println("WalletAddress: " + walletAddress);
-        System.out.println("NFT: " + wallet);
+        System.out.println("\u001B[32m" + "WalletAddress: " + walletAddress + "\u001B[0m");
+        NFT.showList(wallet);
         System.out.println("Balance: " + balance);
     }
 
@@ -47,7 +49,7 @@ public class Wallet implements SendMsg{
     public void sentMessage(NFT nft, Wallet address) {
         wallet.remove(nft);
         address.wallet.add(nft);
-        System.out.println(walletAddress + " отправил " + address.getWalletAddress() + " 1 НФТ");
+        System.out.println("\u001B[35m" + walletAddress + " отправил " + address.getWalletAddress() + " 1 НФТ"+ nft.getName() + "\u001B[0m");
     }
 
     public void recieveMessage(NFT nft){
