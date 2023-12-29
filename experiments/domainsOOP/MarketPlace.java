@@ -10,17 +10,16 @@ public class MarketPlace implements Trading{
     String marketAddress;
 
     public MarketPlace(String name, double balance, String marketAddress){
-        super();
         this.name = name; this.balance = balance; this.marketAddress = marketAddress;
     }
 
     public void tooString(){
-        System.out.println("{" +
-                            "name=" + name +
+        System.out.println("\u001B[34m" + "{" +
+                            "MarketPlace=" + name +
                             ", balance=" + balance +
                             ", amountOfNFT=" + amountOfNFT +
                             ", marketAddress=" + marketAddress +
-                            "}");
+                            "}" +  "\u001B[0m");
     }
 
     public String getName() {
@@ -40,11 +39,12 @@ public class MarketPlace implements Trading{
     }
 
     public int getAmountOfNFT() {
-        return storer.size();
+        return amountOfNFT;
     }
 
-    public void setAmountOfNFT(int amountOfNFT) {
-        this.amountOfNFT = amountOfNFT;
+    private void setAmountOfNFT() {
+
+        amountOfNFT = storer.size();
     }
 
     public String getMarketAddress() {
@@ -62,7 +62,8 @@ public class MarketPlace implements Trading{
             wallet.setBalance(wallet.balance + price);
             storer.add(nft);
             balance = balance - price;
-            System.out.println("\u001B[35m" + "Магазин " + name + " купил 1 НФТ " + nft.getName() +" у кошелька " + wallet.getWalletAddress() + " за " + price + "\u001B[0m");
+            setAmountOfNFT();
+            System.out.println("\u001B[35m" + "Магазин " + name + " купил НФТ " + nft.getName() +" у кошелька " + wallet.getWalletAddress() + " за " + price + "\u001B[0m");
         }
 
     }
@@ -74,6 +75,8 @@ public class MarketPlace implements Trading{
             storer.remove(nft);
             wallet.balance -=price;
             balance +=price;
+            setAmountOfNFT();
+            System.out.println("\u001B[35m" + "Магазин " + name + " продал НФТ " + nft.getName() +" кошельку " + wallet.getWalletAddress() + " за " + price + "\u001B[0m");
 
         }
 

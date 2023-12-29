@@ -12,7 +12,7 @@ public class Minter implements Mint, SendMsg {
             mintedCollection.add(nft);
             minters.add(wallet.getWalletAddress());
             wallet.setBalance(wallet.getBalance() - nft.getPriceMint());
-            System.out.println("\u001B[35m" + "NFT" + nft + " создана за "+ nft.getPriceMint() + "\u001B[0m");
+            System.out.println("\u001B[35m" + "NFT " + nft.getName() + " создана за "+ nft.getPriceMint() + "\u001B[0m");
         }
     }
 

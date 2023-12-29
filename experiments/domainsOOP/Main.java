@@ -9,9 +9,9 @@ public class Main {
         Domain domain1 = new Domain(1, "author.ton", 1, "domain", 196,0);
         Domain domain2 = new Domain(2, "song.ton", 1, "domain", 290,0);
         Domain domain3 = new Domain(3, "subscriber.ton", 1, "domain", 90,0);
-        Wallet wallet1 = new Wallet("13579", 2000);
-        Wallet wallet2 = new Wallet("24680", 1000);
-        MarketPlace marketPlace1 = new MarketPlace("getgems.io", 5000, "77777" );
+        Wallet wallet1 = new Wallet("№13579", 2000);
+        Wallet wallet2 = new Wallet("№24680", 1000);
+        MarketPlace marketPlace1 = new MarketPlace("getgems.io", 5000, "№77777" );
         Minter minter = new Minter();
         minter.toMint(domain1, wallet1);
         minter.sentMessage(wallet1);
@@ -25,16 +25,9 @@ public class Main {
         wallet1.showWallet();
         wallet2.showWallet();
         marketPlace1.tooString();
-        System.out.println(marketPlace1.getBalance());
         marketPlace1.buy(domain1, wallet1, 800);
-        System.out.println(marketPlace1.getBalance());
         wallet1.showWallet();
         marketPlace1.tooString();
-        
-        
-        System.out.println(
-            
-        );
         marketPlace1.buy(domain2, wallet2, 2200);
         marketPlace1.tooString();
 

@@ -5,8 +5,8 @@ import java.util.List;
 
 public abstract class NFT {
     public int id;
-    static public String name;
-    public int amount;
+    public String name;
+    public int amount = 1;
     public String type;
     public String description = null;
     public double priceMint;

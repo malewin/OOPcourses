@@ -48,22 +48,23 @@ public class Wallet implements SendMsg{
     }
 
     public void showWallet(){
-        System.out.println("\u001B[32m" + "WalletAddress: " + walletAddress + "\u001B[0m");
-        System.out.println(strBuilder(wallet));
+        System.out.println("\u001B[32m" + "WalletAddress: " + walletAddress);
         System.out.println("Balance: " + balance);
+        System.out.println("NFT amount: " + wallet.size());
+        System.out.println(strBuilder(wallet)+ "\u001B[0m");
     }
 
     @Override
     public void sentMessage(NFT nft, Wallet address) {
         wallet.remove(nft);
         address.wallet.add(nft);
-        System.out.println("\u001B[35m" + walletAddress + " отправил " + address.getWalletAddress() + " 1 НФТ"+ nft.getName() + "\u001B[0m");
+        System.out.println("\u001B[35m" + walletAddress + " отправил " + address.getWalletAddress() + " НФТ "+ nft.getName() + "\u001B[0m");
     }
 
     public String strBuilder(List<NFT> list){
-        StringBuilder onerow = new StringBuilder("{");
+        StringBuilder onerow = new StringBuilder("NFT: ");
         for (NFT nft : list) {
-            onerow.append(nft.toString());
+            onerow.append(nft.toString() + "\n");
         }
         String res = onerow.toString();
         return res;
