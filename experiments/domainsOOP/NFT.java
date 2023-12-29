@@ -9,8 +9,8 @@ public abstract class NFT {
     public int amount = 1;
     public String type;
     public String description = null;
-    public double priceMint;
-    protected String addrMinter;
+    public double priceMint = 0;
+    protected String addrMinter = null;
 
     public NFT(int id, String name, int amount, String type, double priceMint){
         this.id = id; this.name = name; this.amount = amount;

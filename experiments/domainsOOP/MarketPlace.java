@@ -13,13 +13,23 @@ public class MarketPlace implements Trading{
         this.name = name; this.balance = balance; this.marketAddress = marketAddress;
     }
 
-    public void tooString(){
-        System.out.println("\u001B[34m" + "{" +
+    @Override
+    public String toString(){
+        return ("\u001B[34m" + "{" +
                             "MarketPlace=" + name +
                             ", balance=" + balance +
                             ", amountOfNFT=" + amountOfNFT +
                             ", marketAddress=" + marketAddress +
                             "}" +  "\u001B[0m");
+    }
+
+    public void showMarket(){
+        System.out.println("\u001B[34m" + "{" +
+                "MarketPlace=" + name +
+                ", balance=" + balance +
+                ", amountOfNFT=" + amountOfNFT +
+                ", marketAddress=" + marketAddress +
+                "}" +  "\u001B[0m");
     }
 
     public String getName() {

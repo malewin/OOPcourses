@@ -1,10 +1,10 @@
 package experiments.domainsOOP;
 
 public class Domain extends NFT{
-    private String walletAddress;
-    private String adnlAddrSite;
-    private String hexStorage;
-    private String subdomainAddr;
+    public String walletAddress;
+    public String adnlAddrSite;
+    public String hexStorage;
+    public String subdomainAddr;
     public double priceOffer = 0;
     public String type = "domain";
 

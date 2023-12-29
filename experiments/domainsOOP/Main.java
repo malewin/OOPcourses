@@ -5,7 +5,7 @@ import java.util.Arrays;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Domain domain1 = new Domain(1, "author.ton", 1, "domain", 196,0);
         Domain domain2 = new Domain(2, "song.ton", 1, "domain", 290,0);
         Domain domain3 = new Domain(3, "subscriber.ton", 1, "domain", 90,0);
@@ -24,12 +24,35 @@ public class Main {
         wallet2.sentMessage(domain3, wallet1);
         wallet1.showWallet();
         wallet2.showWallet();
-        marketPlace1.tooString();
+        marketPlace1.showMarket();
         marketPlace1.buy(domain1, wallet1, 800);
         wallet1.showWallet();
-        marketPlace1.tooString();
+        marketPlace1.showMarket();
         marketPlace1.buy(domain2, wallet2, 2200);
-        marketPlace1.tooString();
+        marketPlace1.showMarket();
+        RentalService rentDNS = new RentalService("rentDNS", 3000, "№66666");
+        rentDNS.buy(domain3, wallet1, 600);
+        wallet1.showWallet();
+        rentDNS.showMarket();
+        rentDNS.toRentDomain(domain3, wallet2, 25, 20000);
+        wallet2.showWallet();
+        System.out.println(domain3.getWalletAddress());
+        Thread.sleep(20000);
+        System.out.println(((DublikatDomain) rentDNS.amountedRented.getFirst()).getStatus());
+        rentDNS.takeDomain(domain3, (DublikatDomain) rentDNS.amountedRented.getFirst(), wallet2);
+        rentDNS.showMarket();
+        wallet2.showWallet();
+        System.out.println(domain3.getWalletAddress());
+
+        rentDNS.toRentDomain(domain3, wallet1, 25, 10000);
+        wallet1.showWallet();
+        System.out.println(domain3.getWalletAddress());
+        Thread.sleep(10000);
+        System.out.println(((DublikatDomain) rentDNS.amountedRented.getLast()).getStatus());
+        rentDNS.takeDomain(domain3, (DublikatDomain) rentDNS.amountedRented.getFirst(), wallet1);
+        rentDNS.showMarket();
+        wallet1.showWallet();
+        System.out.println(domain3.getWalletAddress());
 
         }
     }
