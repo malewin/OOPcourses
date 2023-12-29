@@ -16,8 +16,8 @@ public class Domain extends NFT{
     }
 
     @Override
-    public void tooString() {
-        System.out.println("{" + "id=" + id +
+    public String toString() {
+        return "{" + "id=" + id +
                 ", name=" + name +
                 ", amount=" + amount +
                 ", type=" + type +
@@ -27,9 +27,9 @@ public class Domain extends NFT{
                 ", hexStorage=" + hexStorage +
                 " subdomainAddr=" + subdomainAddr +
                 ", priceMint=" + priceMint +
-                ", priceOffer=" + priceOffer + "}");
+                ", priceOffer=" + priceOffer + "}";
     }
-
+   
     public String getWalletAddress() {
         return walletAddress;
     }

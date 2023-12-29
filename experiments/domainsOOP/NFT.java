@@ -1,5 +1,6 @@
 package experiments.domainsOOP;
 
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class NFT {
@@ -16,8 +17,8 @@ public abstract class NFT {
         this.type = type; this.priceMint = priceMint;
     }
 
-    public void tooString(){
-        System.out.println("{" + "id=" + id +
+    public String toString(){
+        return ("{" + "id=" + id +
                             ", name=" + name +
                             ", amount=" + amount +
                             ", type=" + type +
@@ -81,13 +82,9 @@ public abstract class NFT {
         this.description = description;
     }
 
-    public static void showList(List<NFT> nftList){
-        String [] collection = new String[nftList.size()];
-        for (int i = 0; i < collection.length; i++) {
-            for (NFT domain : nftList) {
-                collection[i] = domain.getName();
-            }
-        }
-        System.out.println("\u001B[33m" + collection + "\u001B[0m");
-    }
+    // public static String showList(List<NFT> nftList){
+    //     for (NFT nft: nftList) {
+    //         nft.toString();
+    //     }
+    // }
 }

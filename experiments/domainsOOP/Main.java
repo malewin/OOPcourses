@@ -1,5 +1,7 @@
 package experiments.domainsOOP;
 
+import java.util.Arrays;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -28,6 +30,11 @@ public class Main {
         System.out.println(marketPlace1.getBalance());
         wallet1.showWallet();
         marketPlace1.tooString();
+        
+        
+        System.out.println(
+            
+        );
         marketPlace1.buy(domain2, wallet2, 2200);
         marketPlace1.tooString();
 

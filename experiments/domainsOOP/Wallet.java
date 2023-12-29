@@ -15,6 +15,14 @@ public class Wallet implements SendMsg{
         this.balance = balance;
     }
 
+    @Override
+    public String toString(){
+        return null;
+    }
+    public String toString(List<NFT> list){
+        String res = strBuilder(list);
+        return res;
+    }
     public String getWalletAddress() {
         return walletAddress;
     }
@@ -41,7 +49,7 @@ public class Wallet implements SendMsg{
 
     public void showWallet(){
         System.out.println("\u001B[32m" + "WalletAddress: " + walletAddress + "\u001B[0m");
-        NFT.showList(wallet);
+        System.out.println(strBuilder(wallet));
         System.out.println("Balance: " + balance);
     }
 
@@ -52,6 +60,14 @@ public class Wallet implements SendMsg{
         System.out.println("\u001B[35m" + walletAddress + " отправил " + address.getWalletAddress() + " 1 НФТ"+ nft.getName() + "\u001B[0m");
     }
 
+    public String strBuilder(List<NFT> list){
+        StringBuilder onerow = new StringBuilder("{");
+        for (NFT nft : list) {
+            onerow.append(nft.toString());
+        }
+        String res = onerow.toString();
+        return res;
+    }
     public void recieveMessage(NFT nft){
         wallet.add(nft);
     }
