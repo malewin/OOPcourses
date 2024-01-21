@@ -9,7 +9,6 @@ public class RentalService extends MarketPlace implements RentalInterface{
     List<NFT> amountedRented = new ArrayList<>(); // список классов-слепков где будет проверяться статус истекшего в аренеде домена
     // Time starRentTime = new Time(0, 0, 0); в доп классе-слепке заминченого нфт будем менять статус
     // Time endRendTime = new Time(0, 0, 0);
-    boolean status;
 
     public RentalService(String name, double balance, String marketAddress) {
         super(name, balance, marketAddress);

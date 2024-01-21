@@ -17,7 +17,7 @@ public class Minter implements Mint, SendMsg {
     }
 
     @Override
-    public void  sentMessage(NFT nft, Wallet wallet){};
+    public void  sendNFT(NFT nft, Wallet wallet){};
     public void sentMessage(Wallet wallet) {
         if (mintedCollection.size() != 0 && mintedCollection.peek().getAddrMinter().equals(wallet.getWalletAddress())){
             wallet.wallet.add(mintedCollection.poll());

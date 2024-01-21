@@ -55,7 +55,7 @@ public class Wallet implements SendMsg{
     }
 
     @Override
-    public void sentMessage(NFT nft, Wallet address) {
+    public void sendNFT(NFT nft, Wallet address) {
         wallet.remove(nft);
         address.wallet.add(nft);
         System.out.println("\u001B[35m" + walletAddress + " отправил " + address.getWalletAddress() + " НФТ "+ nft.getName() + "\u001B[0m");

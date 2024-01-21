@@ -1,5 +1,5 @@
 package experiments.domainsOOP;
 
 public interface SendMsg {
-    abstract void sentMessage(NFT nft, Wallet address);
+    abstract void sendNFT(NFT nft, Wallet address);
 }

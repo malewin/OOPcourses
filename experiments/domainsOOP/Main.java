@@ -2,8 +2,6 @@ package experiments.domainsOOP;
 
 import java.util.Arrays;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Domain domain1 = new Domain(1, "author.ton", 1, "domain", 196,0);
@@ -21,7 +19,7 @@ public class Main {
         minter.toMint(domain3, wallet2);
         minter.sentMessage(wallet2);
         wallet2.showWallet();
-        wallet2.sentMessage(domain3, wallet1);
+        wallet2.sendNFT(domain3, wallet1);
         wallet1.showWallet();
         wallet2.showWallet();
         marketPlace1.showMarket();
