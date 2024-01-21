@@ -1,32 +1,38 @@
-package seminars.seminar3;
+package seminar3;
 
-public abstract class Student {
-    String name;
-    String sourName;
-    static boolean choiced;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    public Student(String name, String sourName){
-        this.name = name;
-        this.sourName = sourName;
-        choiced = false;
+public class Student implements Comparable<Student> {
+    int studentId;
+    String firstName;
+    String secondName;
+    String lastName;
+
+    public Student(int studentId, String firstName, String secondName, String lastName) {
+        this.studentId = studentId;
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.lastName = lastName;
     }
 
-    public String toString(){
-        return "{" + " name=" + name +
-                    ", sourName=" + sourName +
-                    "}";
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId=" + studentId +
+                ", firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 
-    public String getName(){
-        return name;
+    @Override
+    public int compareTo(Student o) {
+        if (studentId > o.studentId)
+            return 1;
+        if (studentId < o.studentId)
+            return -1;
+        return 0;
     }
-
-    public String getSourName(){
-        return sourName;
-    }
-
-    public boolean getChoiced(){
-        return choiced;
-    }
-
 }
